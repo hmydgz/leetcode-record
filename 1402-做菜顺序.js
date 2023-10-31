@@ -73,7 +73,13 @@ n == satisfaction.length
 //   return nonnegativeResult + negativeResult
 // };
 
+/**
+ * 
+ * @param {number[]} satisfaction 
+ */
 function maxSatisfaction(satisfaction) {
+  satisfaction.sort((a, b) => b - a)
+  // let 
 
 }
 
@@ -84,4 +90,4 @@ function maxSatisfaction(satisfaction) {
 
 
 // console.log([-10, -7, -6, -5, -5, -2, -2, -1, 1, 3, 4, 5, 8, 9].reduce((count ,v, i) => count + (v * (i + 1)), 0));
-console.log([-10, -7, -6, -5, -5, -2, -2, -1, 1, 3, 4, 5, 8, 9].sort((a, b) => b - a));
+// console.log([-10, -7, -6, -5, -5, -2, -2, -1, 1, 3, 4, 5, 8, 9].sort((a, b) => b - a));
