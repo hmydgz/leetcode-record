@@ -44,10 +44,42 @@ C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。
 1 <= num <= 3999
 */
 
+const map = {
+  1000: 'M',
+  900: 'CM',
+  500: 'D',
+  400: 'CD',
+  100: 'C',
+  90: 'XC',
+  40: 'XL',
+  50: 'L',
+  10: 'X',
+  9: 'IX',
+  5: 'V',
+  4: 'IV',
+  1: 'I',
+}
+
+const keys = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+
 /**
  * @param {number} num
  * @return {string}
  */
-var intToRoman = function(num) {
+var intToRoman = function (num) {
+  let res = ''
+  while (num) {
+    keys.find(v => {
+      if (num < v) return false
+      res += map[v]
+      num -= v
+      return true
+    })
+  }
 
+  return res
 };
+
+// console.log(intToRoman(58));
+// console.log(intToRoman(1994));
+console.log(intToRoman(20));
